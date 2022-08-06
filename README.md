@@ -5,7 +5,7 @@ Asynchronous Python module to get stock, cryptocurrency, and ETF data from Yahoo
 
 Install from repository:
     
-    pip3 install git+github.com/aLEGEND21/async-yfinance-api.git
+    pip3 install git+https://github.com/aLEGEND21/async-yfinance-api.git
 
 Available Functions
 -------------------
