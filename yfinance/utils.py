@@ -2,7 +2,7 @@ import aiohttp
 
 
 class AsyncRequester:
-    """A class to make asynchronous requests to the Yahoo Finance API."""
+    """A class to make asynchronous requests to the Yahoo Finance website."""
 
     @classmethod    
     async def get(self, url: str, base_url: str = 'https://finance.yahoo.com/'):
