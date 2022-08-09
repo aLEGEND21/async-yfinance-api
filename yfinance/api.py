@@ -20,7 +20,7 @@ async def fetch_summary(ticker: str):
     response = await AsyncRequester.get(url)
     
     # Create the soup
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(await response.text(), 'html.parser')
     
     # Return an error and a list of similar tickers if Yahoo Finance redirects to the lookup page
     if "lookup" in str(response.url):
