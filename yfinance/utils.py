@@ -18,4 +18,5 @@ class AsyncRequester:
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(base_url + url) as response:
-                return response
+                pass
+        return response
