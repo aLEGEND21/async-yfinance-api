@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from utils import AsyncRequester
+from .utils import AsyncRequester
 
 
 async def fetch_summary(ticker: str):
