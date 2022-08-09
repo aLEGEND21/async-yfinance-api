@@ -3,7 +3,7 @@ import setuptools
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
-    name='async-yfinance-api',
+    name='async-yfinance-api-py',
     url='https://github.com/aLEGEND21/async-yfinace-api',
     author='aLEGEND21',
     author_email='_',
