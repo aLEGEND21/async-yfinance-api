@@ -1,5 +1,4 @@
 import aiohttp
-import copy
 
 
 class AsyncRequester:
@@ -19,4 +18,7 @@ class AsyncRequester:
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(base_url + url) as response:
-                return copy.copy(response)
+                return {
+                    "url": str(response.url),
+                    "text": await response.text()        
+                }

@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from .utils import AsyncRequester
+from .utils import *
 
 
 async def fetch_summary(ticker: str):
@@ -20,10 +20,10 @@ async def fetch_summary(ticker: str):
     response = await AsyncRequester.get(url)
     
     # Create the soup
-    soup = BeautifulSoup(await response.text(), 'html.parser')
+    soup = BeautifulSoup(response["text"], 'html.parser')
     
     # Return an error and a list of similar tickers if Yahoo Finance redirects to the lookup page
-    if "lookup" in str(response.url):
+    if "lookup" in response["url"]:
         similar_tickers = []
         lookup_table = soup.find('table', {'class': 'lookup-table W(100%) Pos(r) BdB Bdc($seperatorColor) smartphone_Mx(20px)'})
         if lookup_table is not None:
