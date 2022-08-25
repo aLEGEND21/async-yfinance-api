@@ -16,8 +16,11 @@ class AsyncRequester:
         Returns:
             str: The response text from the API
         """
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+        }
         async with aiohttp.ClientSession() as session:
-            async with session.get(base_url + url) as response:
+            async with session.get(base_url + url, headers=headers) as response:
                 return {
                     "url": str(response.url),
                     "text": await response.text()        
